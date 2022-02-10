@@ -1,0 +1,28 @@
+:root {
+    font-size: 16px;
+}
+
+body {
+    background-color: rgb(255, 237, 215);
+    margin:0;
+}
+
+/* Header */
+#title {
+    font-family: 'ArvoBold';
+    font-size: 3rem;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'ArvoBold';
+    src: url(../fonts/Arvo-Bold.woff2);
+}
+@font-face {
+    font-family: 'Arvo';
+    src: url(../fonts/Arvo-Regular.woff2);
+}
+@font-face {
+    font-family: 'ArvoBoldItalic';
+    src: url(../fonts/Arvo-BoldItalic.woff2);
+}
