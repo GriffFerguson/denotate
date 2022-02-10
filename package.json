@@ -4,7 +4,8 @@
   "description": "Spelling game",
   "main": "wordArray.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx prodbuild build",
+    "serve": "npx prodbuild serve --dev"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,6 @@
   },
   "homepage": "https://github.com/GriffFerguson/spell#readme",
   "devDependencies": {
-    "prodbuild": "^1.0.1"
+    "prodbuild": "^1.2.3"
   }
 }

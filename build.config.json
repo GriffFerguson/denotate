@@ -1,0 +1,10 @@
+{
+    "entry": "./src",
+    "output": "./dist/",
+    "port": 5000,
+    "exclude": [
+        "words.txt",
+        "wordArray.js",
+        "bin/"
+    ]
+}
