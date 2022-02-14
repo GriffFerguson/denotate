@@ -7,10 +7,71 @@ body {
     margin:0;
 }
 
-/* Header */
+strong {
+    font-family: 'ArvoBold';
+    font-weight:bold;
+    font-size:inherit;
+}
+
+hr {
+    width: 94%;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: black;
+    height:4px;
+}
+
+.center {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+
 #title {
     font-family: 'ArvoBold';
     font-size: 3rem;
+    text-align: center;
+}
+
+#definition-box {
+    border: 3px dashed black;
+    width: 50vw;
+    padding:1vw;
+    margin-left:24vw;
+    margin-right:24vw;
+}
+
+/* Definition */
+#pronounce, #speech-part {
+    font-family: 'ArvoBold', Arial, sans-serif;
+    font-size: 1.75rem;
+    font-weight:bold;
+}
+
+#pronounce {text-decoration: underline;}
+
+/* Answer */
+#answer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width:auto;
+    gap:1%;
+    margin-top:5vh;
+}
+
+.letter {
+    border:0.08rem solid black;
+    border-radius: 15%;
+    background-color: white;
+    font-family: 'Arvo';
+    text-align: center;
+    width:2vw;
+    padding:1rem;
+    font-size:1.2rem;
 }
 
 /* Fonts */
