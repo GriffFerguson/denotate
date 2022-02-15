@@ -9,7 +9,8 @@ var words: any,
         pronounce: document.getElementById('pronounce')!,
         partOfSpeech: document.getElementById('speech-part')!,
         definition: document.getElementById('definition')!,
-        answer: document.getElementById('answer')!
+        answer: document.getElementById('answer')!,
+        submit: document.getElementById('submit')!
     };
 
 getWords();
@@ -55,16 +56,20 @@ function createInput() {
         input.addEventListener('keydown', (event) => {
             event.preventDefault()
             var e: any = event;
-            var id: string = e.target.id;
+            var id: number = parseInt(e.target.id.split('-')[1]);
+            console.log(id)
             var key: string = e.key
-            var elem = document.getElementById(`input-${parseInt(id.split('-')[1])}`)
-            elem!.setAttribute('value', '')
+            var elem = document.getElementById(`input-${id}`)
             if (['Backspace', 'Delete'].includes(key)) {
                 elem!.setAttribute('value', '')
-                document.getElementById(`input-${parseInt(id.split('-')[1], 10) - 1}`)!.focus()
+                document.getElementById(`input-${id - 1}`)!.focus()
             } else if (allowedLetters.includes(key)) {
                 elem!.setAttribute('value', key)
-                document.getElementById(`input-${parseInt(id.split('-')[1], 10) + 1}`)!.focus()
+                if (id == answerLetters.length - 1) {
+                    gameElems.submit.focus()
+                } else {
+                    document.getElementById(`input-${id + 1}`)!.focus()
+                }            
             }
         })
         gameElems.answer.appendChild(input)
