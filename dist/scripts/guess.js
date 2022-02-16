@@ -1,0 +1,1 @@
+"use strict";var form=document.getElementsByClassName("letter"),userAnswer="";document.body.addEventListener("submit",(e=>{for(var t of(e.preventDefault(),form))userAnswer+=t.getAttribute("value");console.log(userAnswer)}));

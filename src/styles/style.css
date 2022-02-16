@@ -53,15 +53,16 @@ hr {
 #pronounce {text-decoration: underline;}
 
 /* Answer */
-#answer {
+.answer-flex {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width:auto;
-    gap:1%;
-    margin-top:5vh;
+    gap:1rem;
 }
+
+#answer {margin-top:2rem;}
 
 .letter {
     border:0.08rem solid black;
@@ -72,6 +73,22 @@ hr {
     width:2vw;
     padding:1rem;
     font-size:1.2rem;
+}
+
+#submit {
+    background-color:rgb(28, 238, 28);
+    color: black;
+    border: 0.1rem solid black;
+    border-radius: 15%;
+    font-family: 'Arvo';
+    font-size:1.1rem;
+    padding:1%;
+    transition: all 500ms;
+}
+
+#submit:focus {
+    background-color: rgb(38, 109, 38);
+    color: white;
 }
 
 /* Fonts */

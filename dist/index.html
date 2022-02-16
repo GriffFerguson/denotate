@@ -1,2 +1,9 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Spell: The Word Guessing Game</title><link rel="stylesheet" href="./styles/style.css"></head><body><div class="center"><h1 id="title">Spell!</h1></div><hr><div id="definition-box"><span id="pronounce"></span>&nbsp;&nbsp;&nbsp;
-        <span id="speech-part"></span><br><strong>Definition:</strong>&nbsp;<span id="definition"></span></div><form id="answer"></form><script src="./scripts/level.js"></script></body></html>
+        <span id="speech-part"></span><br><strong>Definition:</strong>&nbsp;<span id="definition"></span></div><form id="answer" class="answer-flex"><div id="answerInput" class="answer-flex"></div><input type="submit" value="GO" id="submit"></form><script src="./scripts/level.js"></script><script src="./scripts/guess.js"></script><script>
+        document.getElementById('submit').addEventListener('keydown', (e) => {
+            if (['Backspace', 'Delete'].includes(e.key)) {
+                var elems = document.getElementsByClassName('letter')
+                elems[elems.length - 1].focus()
+            }
+        })
+    </script></body></html>

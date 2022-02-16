@@ -16,11 +16,19 @@
         <span id="speech-part"></span><br>
         <strong>Definition:</strong>&nbsp;<span id="definition"></span>
     </div>
-    <form id="answerForm">
-        <div id="answer"></div>
+    <form id="answer" class="answer-flex">
+        <div id="answerInput" class="answer-flex"></div>
         <input type="submit" value="GO" id="submit">
     </form>
     <script src="./scripts/level.js"></script>
     <script src="./scripts/guess.js"></script>
+    <script>
+        document.getElementById('submit').addEventListener('keydown', (e) => {
+            if (['Backspace', 'Delete'].includes(e.key)) {
+                var elems = document.getElementsByClassName('letter')
+                elems[elems.length - 1].focus()
+            }
+        })
+    </script>
 </body>
 </html>

@@ -1,7 +1,10 @@
-var form = document.getElementById('answer')
+var form = document.getElementsByClassName('letter')
+var userAnswer: string = '';
 
 document.body.addEventListener('submit', e => {
     e.preventDefault()
-    var data = new FormData(form as HTMLFormElement)
-    console.log(data)
+    for (var letter of form) {
+        userAnswer += letter.getAttribute('value'); 
+    }
+    console.log(userAnswer)
 })

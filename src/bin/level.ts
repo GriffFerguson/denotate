@@ -9,7 +9,7 @@ var words: any,
         pronounce: document.getElementById('pronounce')!,
         partOfSpeech: document.getElementById('speech-part')!,
         definition: document.getElementById('definition')!,
-        answer: document.getElementById('answer')!,
+        answer: document.getElementById('answerInput')!,
         submit: document.getElementById('submit')!
     };
 
@@ -57,7 +57,6 @@ function createInput() {
             event.preventDefault()
             var e: any = event;
             var id: number = parseInt(e.target.id.split('-')[1]);
-            console.log(id)
             var key: string = e.key
             var elem = document.getElementById(`input-${id}`)
             if (['Backspace', 'Delete'].includes(key)) {
