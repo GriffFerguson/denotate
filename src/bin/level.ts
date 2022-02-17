@@ -53,6 +53,7 @@ function createInput() {
         var input = document.createElement('input');
         input.setAttribute('type', 'text');
         input.setAttribute('id', `input-${i.toString()}`);
+        input.setAttribute('aria-label', `input letter ${i + 1} of your answer`)
         input.classList.add('letter');
         input.addEventListener('keydown', (event) => {
             event.preventDefault()

@@ -8,7 +8,6 @@ document.body.addEventListener('submit', e => {
     for (var letter of form) {
         userAnswer += letter.getAttribute('value'); 
     }
-    console.log(userAnswer)
     if (answer == userAnswer) {
         document.body.classList.add('correct')
         setTimeout(() => {
