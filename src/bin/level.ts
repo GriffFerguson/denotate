@@ -22,6 +22,7 @@ async function getWords() {
 
 function generateLevel() {
     var rand = Math.floor(Math.random() * words.words.length);
+    gameElems.answer.innerHTML = ''
 
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${words.words[rand]}`)
     .then(response => {return response.json()})
@@ -74,4 +75,5 @@ function createInput() {
         gameElems.answer.appendChild(input)
         i+=1;
     }
+    document.getElementById('input-0')!.focus()
 }
