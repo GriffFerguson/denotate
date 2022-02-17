@@ -27,15 +27,15 @@ function generateLevel() {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${words.words[rand]}`)
     .then(response => {return response.json()})
     .then(json => {
-        if (json.title) {
-            generateLevel();
-        } else {
-            answer = words.words[rand];
-            gameElems.pronounce.innerText = json[0].phonetic;
-            gameElems.partOfSpeech.innerText = json[0].meanings[0].partOfSpeech;
-            gameElems.definition.innerText = json[0].meanings[0].definitions[0].definition;
-            createInput()
-        }
+        answer = words.words[rand];
+        gameElems.pronounce.innerText = json[0].phonetic;
+        gameElems.partOfSpeech.innerText = json[0].meanings[0].partOfSpeech;
+        gameElems.definition.innerText = json[0].meanings[0].definitions[0].definition;
+        createInput()
+    })
+    .catch(err => {
+        console.log(err)
+        generateLevel()
     })
 }
 
