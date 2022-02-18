@@ -25,6 +25,46 @@ hr {
     height:4px;
 }
 
+/* Information */
+#info {
+    top: 0.6rem;
+    position:absolute;
+    display:grid;
+    grid-template-columns: 50% 50%;
+    margin-left:5vw;
+    margin-right:5vw;
+}
+
+#timer-wrapper, #score-wrapper {
+    display:flex;
+    width:100%;
+    font-family: 'Arvo';
+    font-size:1rem;
+}
+
+#time-circle {
+    width:4rem;
+    height:4rem;
+    border-radius: 50%;
+    background: conic-gradient(rgb(0,0,0) 100%, rgb(255, 255, 255) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#time-circle-inner {
+    font-family:'Arvo';
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:black;
+    background-color:rgb(255, 237, 215);
+    width:3.5rem;
+    height:3.5rem;
+    border-radius: 50%;
+    z-index:99
+}
+
 .center {
     display:flex;
     justify-content: center;

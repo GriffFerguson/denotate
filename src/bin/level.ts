@@ -1,10 +1,6 @@
-interface gameElems {
-    [name: string]: HTMLElement
-};
-
 var words: any,
     answer: string,
-    gameElems: gameElems = {
+    gameElems: htmlElems = {
         definitionBox: document.getElementById('definition-box')!,
         pronounce: document.getElementById('pronounce')!,
         partOfSpeech: document.getElementById('speech-part')!,

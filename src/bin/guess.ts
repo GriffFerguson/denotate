@@ -12,6 +12,7 @@ document.body.addEventListener('submit', e => {
         document.body.classList.add('correct')
         setTimeout(() => {
             document.body.classList.remove('correct')
+            clearInterval(timerId)
             generateLevel()
         }, 1500)
     } else {

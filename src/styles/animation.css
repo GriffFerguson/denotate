@@ -25,6 +25,6 @@
 .incorrect {background-color: rgb(230, 84, 84);}
 .incorrect #answerInput {
     animation-name: incorrect;
-    animation-duration: 1s;
+    animation-duration: 600ms;
     animation-iteration-count: 1;
 }
