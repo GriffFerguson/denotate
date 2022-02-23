@@ -17,5 +17,22 @@ function startTimer(this: any) {
         timer-=1;
         utilityElems.timerText.innerText = `0:${timer < 10 ? `0${timer}` : timer}`;
         utilityElems.timer.style.background = `conic-gradient(rgb(0,0,0) ${(timer / 30) * 100}%, rgb(255,255,255) ${((timer / 30) * 100) + 1}%)`;
+        if (timer == 0) {
+            clearInterval(timerId);
+            document.body.classList.add('incorrect')
+            document.getElementById('answerInput')!.innerHTML = `<span class="letter" style="width:auto;">${answer}</span>`
+            setTimeout(() => {
+                document.body.classList.remove('incorrect')
+                generateLevel()
+            }, 1000)
+        }
     }, 1000)
+}
+
+function score(change: number) {
+    utilityElems.score.innerText = (parseInt(utilityElems.score.innerText) + change).toString()
+    if (parseInt(utilityElems.score.innerText) > parseInt(utilityElems.highScore.innerText)) {
+        localStorage.setItem('highScore', utilityElems.score.innerText)
+        utilityElems.highScore.innerText = utilityElems.score.innerText;
+    }
 }
