@@ -6,7 +6,8 @@ var words: any,
         partOfSpeech: document.getElementById('speech-part')!,
         definition: document.getElementById('definition')!,
         answer: document.getElementById('answerInput')!,
-        submit: document.getElementById('submit')!
+        submit: document.getElementById('submit')!,
+        definitions: document.getElementById('definitions')!,
     };
 
 getWords();
@@ -15,23 +16,35 @@ async function getWords() {
     words = await fetch('words.json').then(response => {return response.json()});
     generateLevel();
 }
+var rate = 0;
 
 function generateLevel() {
     var rand = Math.floor(Math.random() * words.words.length);
     gameElems.answer.innerHTML = ''
+    gameElems.definitions.innerHTML = ''
 
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${words.words[rand]}`)
     .then(response => {return response.json()})
     .then(json => {
+        console.log(json)
         answer = words.words[rand];
         gameElems.pronounce.innerText = json[0].phonetic;
-        gameElems.partOfSpeech.innerText = json[0].meanings[0].partOfSpeech;
-        gameElems.definition.innerText = json[0].meanings[0].definitions[0].definition;
+        for (var def of json[0].meanings) {
+            console.log(def)
+            var meaning = document.createElement('div')
+            meaning.classList.add('meaning')
+            meaning.innerHTML = `<strong>Definition: (${def.partOfSpeech})</strong>&nbsp;${def.definitions[0].definition}`
+            gameElems.definitions.appendChild(meaning)
+        }
         createInput()
+        startTimer()
     })
     .catch(err => {
-        console.log(err)
-        generateLevel()
+        rate += 1;
+        console.log(err, rate)
+        if (rate < 3) {
+            generateLevel()
+        }
     })
 }
 
@@ -43,6 +56,7 @@ var allowedLetters = [
     'y', 'z'
 ]
 function createInput() {
+    console.log('input')
     var answerLetters = answer.split('');
     var i = 0;
     for (var letter in answerLetters) {
