@@ -16,7 +16,6 @@ async function getWords() {
     words = await fetch('words.json').then(response => {return response.json()});
     generateLevel();
 }
-var rate = 0;
 
 function generateLevel() {
     var rand = Math.floor(Math.random() * words.words.length);
@@ -26,11 +25,13 @@ function generateLevel() {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${words.words[rand]}`)
     .then(response => {return response.json()})
     .then(json => {
-        console.log(json)
         answer = words.words[rand];
-        gameElems.pronounce.innerText = json[0].phonetic;
+        if (json[0].phonetic == undefined) {
+            gameElems.pronounce.innerText = json[0].phonetics[0].text
+        } else {
+            gameElems.pronounce.innerText = json[0].phonetic
+        }
         for (var def of json[0].meanings) {
-            console.log(def)
             var meaning = document.createElement('div')
             meaning.classList.add('meaning')
             meaning.innerHTML = `<strong>Definition: (${def.partOfSpeech})</strong>&nbsp;${def.definitions[0].definition}`
@@ -40,11 +41,8 @@ function generateLevel() {
         startTimer()
     })
     .catch(err => {
-        rate += 1;
-        console.log(err, rate)
-        if (rate < 3) {
-            generateLevel()
-        }
+        console.log(err)
+        generateLevel()
     })
 }
 
@@ -56,7 +54,6 @@ var allowedLetters = [
     'y', 'z'
 ]
 function createInput() {
-    console.log('input')
     var answerLetters = answer.split('');
     var i = 0;
     for (var letter in answerLetters) {
