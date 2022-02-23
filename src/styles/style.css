@@ -33,6 +33,7 @@ hr {
     grid-template-columns: 50% 50%;
     margin-left:5vw;
     margin-right:5vw;
+    width: 90vw;
 }
 
 #timer-wrapper, #score-wrapper {
@@ -63,6 +64,17 @@ hr {
     height:3.5rem;
     border-radius: 50%;
     z-index:99
+}
+
+#score-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.1rem;
+}
+#score-wrapper p {
+    margin:0;
+    width:auto;
 }
 
 .center {
