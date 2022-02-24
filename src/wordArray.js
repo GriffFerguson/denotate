@@ -12,7 +12,7 @@ for (var i = 0; i < words.length; i++) {
     }
     else if (
         words[i].substring(words[i].length - 3) == 'ing' ||
-        words[i].substring(words[i].length - 1) == 's' ||
+        (words[i].substring(words[i].length - 1) == 's' && (words[i].charAt(words[i].length - 2 != 's') && !['a','i','o','u'].includes(words[i].charAt(words[i].length - 2)))) ||
         words[i].substring(words[i].length - 2) == 'ed' ||
         words[i].substring(words[i].length - 2) == 'er' ||
         words[i].substring(words[i].length - 4) == 'ment'

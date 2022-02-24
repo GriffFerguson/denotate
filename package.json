@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx prodbuild build",
     "serve": "npx prodbuild serve --dev",
-    "words": "cd src & rm words.json badWords.json & node src/wordArray.js"
+    "words": "rm src/words.json & node src/wordArray.js"
   },
   "repository": {
     "type": "git",
