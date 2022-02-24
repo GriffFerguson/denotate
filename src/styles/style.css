@@ -99,6 +99,8 @@ hr {
     margin-right:24vw;
 }
 
+.meaning {font-family: 'Arvo', serif;}
+
 /* Definition */
 #pronounce {
     font-family: 'ArvoBold', Arial, sans-serif;
@@ -151,13 +153,13 @@ hr {
 /* Fonts */
 @font-face {
     font-family: 'ArvoBold';
-    src: url(../fonts/Arvo-Bold.woff2) format('woff2');
+    src: url(../fonts/Arvo-Bold.woff2) format('woff2'), url(../fonts/Arvo-Bold.ttf) format('ttf');
 }
 @font-face {
     font-family: 'Arvo';
-    src: url(../fonts/Arvo-Regular.woff2) format('woff2');
+    src: url(../fonts/Arvo-Regular.woff2) format('woff2'), url(../fonts/Arvo-Regular.ttf) format('ttf');
 }
 @font-face {
     font-family: 'ArvoBoldItalic';
-    src: url(../fonts/Arvo-BoldItalic.woff2) format('woff2');
+    src: url(../fonts/Arvo-BoldItalic.woff2) format('woff2'), url(../fonts/Arvo-BoldItalic.ttf) format('ttf');
 }
