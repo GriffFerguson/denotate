@@ -10,10 +10,10 @@ document.body.addEventListener('submit', e => {
     }
     if (answer == userAnswer) {
         document.body.classList.add('correct')
+        clearInterval(timerId)
         score(1)
         setTimeout(() => {
             document.body.classList.remove('correct')
-            clearInterval(timerId)
             generateLevel()
         }, 1500)
     } else {
