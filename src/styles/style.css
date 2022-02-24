@@ -12,7 +12,7 @@ body {
 }
 
 strong {
-    font-family: 'ArvoBold';
+    font-family: 'ArvoBold', Arial, sans-serif;
     font-weight:bold;
     font-size:inherit;
 }
@@ -39,7 +39,7 @@ hr {
 #timer-wrapper, #score-wrapper {
     display:flex;
     width:100%;
-    font-family: 'Arvo';
+    font-family: 'Arvo', Arial, sans-serif;
     font-size:1rem;
 }
 
@@ -54,7 +54,7 @@ hr {
 }
 
 #time-circle-inner {
-    font-family:'Arvo';
+    font-family:'Arvo', Arial, sans-serif;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -86,7 +86,7 @@ hr {
 }
 
 #title {
-    font-family: 'ArvoBold';
+    font-family: 'ArvoBold', 'Arial', serif;
     font-size: 3rem;
     text-align: center;
 }
@@ -99,7 +99,7 @@ hr {
     margin-right:24vw;
 }
 
-.meaning {font-family: 'Arvo', serif;}
+.meaning {font-family: 'Arvo', 'Times New Roman' sans-serif;}
 
 /* Definition */
 #pronounce {
@@ -126,7 +126,7 @@ hr {
     border:0.08rem solid black;
     border-radius: 15%;
     background-color: white;
-    font-family: 'Arvo';
+    font-family: 'Arvo', Arial, sans-serif;
     text-align: center;
     width:2vw;
     padding:1rem;
@@ -138,7 +138,7 @@ hr {
     color: black;
     border: 0.1rem solid black;
     border-radius: 15%;
-    font-family: 'Arvo';
+    font-family: 'Arvo', Arial, sans-serif;
     font-size:1.1rem;
     padding:1%;
     transition: all 500ms;
@@ -153,13 +153,16 @@ hr {
 /* Fonts */
 @font-face {
     font-family: 'ArvoBold';
-    src: url(../fonts/Arvo-Bold.woff2) format('woff2'), url(../fonts/Arvo-Bold.ttf) format('ttf');
+    src: url(../fonts/Arvo-Bold.woff2) format('woff2'), 
+        url(../fonts/Arvo-Bold.ttf) format('ttf');
 }
 @font-face {
     font-family: 'Arvo';
-    src: url(../fonts/Arvo-Regular.woff2) format('woff2'), url(../fonts/Arvo-Regular.ttf) format('ttf');
+    src: url(../fonts/Arvo-Regular.woff2) format('woff2'),
+        url(../fonts/Arvo-Regular.ttf) format('ttf');
 }
 @font-face {
     font-family: 'ArvoBoldItalic';
-    src: url(../fonts/Arvo-BoldItalic.woff2) format('woff2'), url(../fonts/Arvo-BoldItalic.ttf) format('ttf');
+    src: url(../fonts/Arvo-BoldItalic.woff2) format('woff2')
+        url(../fonts/Arvo-BoldItalic.ttf) format('ttf');
 }
