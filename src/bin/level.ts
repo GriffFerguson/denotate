@@ -27,7 +27,11 @@ function generateLevel() {
     .then(json => {
         answer = words.words[rand];
         if (json[0].phonetic == undefined) {
-            gameElems.pronounce.innerText = json[0].phonetics[0].text
+            if (json[0].phonetics[0].text == undefined) {
+                gameElems.pronounce.innerText = json[0].phonetics[1].text
+            } else {
+                gameElems.pronounce.innerText = json[0].phonetics[0].text
+            }
         } else {
             gameElems.pronounce.innerText = json[0].phonetic
         }

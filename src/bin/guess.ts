@@ -10,6 +10,7 @@ document.body.addEventListener('submit', e => {
     }
     if (answer == userAnswer) {
         document.body.classList.add('correct')
+        score(1)
         setTimeout(() => {
             document.body.classList.remove('correct')
             clearInterval(timerId)

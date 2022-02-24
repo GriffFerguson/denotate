@@ -21,6 +21,7 @@ function startTimer(this: any) {
             clearInterval(timerId);
             document.body.classList.add('incorrect')
             document.getElementById('answerInput')!.innerHTML = `<span class="letter" style="width:auto;">${answer}</span>`
+            score(-1)
             setTimeout(() => {
                 document.body.classList.remove('incorrect')
                 generateLevel()
@@ -36,3 +37,6 @@ function score(change: number) {
         utilityElems.highScore.innerText = utilityElems.score.innerText;
     }
 }
+
+localStorage.getItem('highScore') == null ? localStorage.setItem('highScore', '0') : false
+utilityElems.highScore.innerText = localStorage.getItem('highScore') as string
